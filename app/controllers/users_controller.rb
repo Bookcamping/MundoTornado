@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :require_user, except: [:new, :create]
   expose(:users) { User.all }
   expose(:user)
 

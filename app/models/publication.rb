@@ -5,4 +5,8 @@ class Publication < ActiveRecord::Base
   validates :title, presence: true
 
   CONTENT_TYPES = ['markdown']
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end

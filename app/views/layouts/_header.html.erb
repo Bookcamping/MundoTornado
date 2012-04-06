@@ -10,8 +10,8 @@
   </nav>
   <% if current_user %>
     <nav id="session">
-    <p>Hola <%= current_user.name %></p>
-    </nav>
-  <% end %>
-  </header>
+    <p>Hola <%= current_user.name %> <%= link_to 'Salir', logout_path %></p>
+  </nav>
+<% end %>
+</header>
 </div>

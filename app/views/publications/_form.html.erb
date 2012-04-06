@@ -1,9 +1,9 @@
-<%= simple_form_for publication do |form| %>
+<%= simple_form_for publication, :html => { :class => 'form-horizontal' } do |form| %>
   <%= form.input :title %>
   <%= form.input :author %>
   <%= form.input :publisher %>
   <%= form.input :content_type, collection: Publication::CONTENT_TYPES, 
     include_blank: false %>
   <%= form.input :content %>
-  <%= form.submit class: 'btn' %>
+  <%= form.button :submit %>
 <% end %>

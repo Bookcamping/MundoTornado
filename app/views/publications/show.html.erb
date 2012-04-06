@@ -1,8 +1,14 @@
+<%= title publication.title %>
 <div class="actions">
   <%= link_to 'Volver', publications_path %>
   <%= link_to 'Editar', [:edit, publication] %>
+  <%= link_to 'Generar .pdf', publication_path(publication, format: 'pdf') %>
 </div>
-<%= content_tag_for :article, publication do %>
-  <%= title publication.title %>
-  <%= render_content publication %>
-<% end %>
+
+<dl class="properties">
+  <dt>Authorxs:</dt><dd><%= publication.author %></dd>
+  <dt>Editorial:</dt><dd><%= publication.publisher %></dd>
+  <dt>Tipo de texto:</dt><dd><%= publication.content_type %></dd>
+  <dt>Creado:</dt><dd><%= time_ago_in_words publication.created_at %></dd>
+  <dt>Última modificación:</dt><dd><%= time_ago_in_words publication.updated_at %></dd>
+</dl>

@@ -10,6 +10,15 @@ class PublicationsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        generator = PdfGenerator.new(publication, view_context)
+        send_data generator.render, filename: "#{publication.title}.pdf",
+          type: 'application/pdf', disposition: 'inline'
+      end
+    end
+
   end
 
   def new

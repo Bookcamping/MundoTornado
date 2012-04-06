@@ -1,0 +1,6 @@
+es:
+  activerecord:
+    models:
+      publication: 'publicación'
+      user: 'usuaria'
+
