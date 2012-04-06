@@ -1,0 +1,24 @@
+<% title 'Entrar' %>
+
+<div class="row">
+  <div class="span6">
+    <h2>Entrar con una cuenta existente</h2>
+    <%= form_tag sessions_path do %>
+      <div class="control-group email required">
+        <label>Email</label>
+        <%= text_field_tag :email %>
+      </div>
+      <div class="control-group password required">
+        <label>Contraseña</label>
+        <%= password_field_tag :password %>
+      </div>
+      <%= button_tag 'Entrar', class: 'btn' %>
+    <% end %>
+  </div>
+
+  <div class="span6">
+    <h2>Darse de alta</h2>
+    <%= render 'users/form' %>
+  </div>
+</div>
+

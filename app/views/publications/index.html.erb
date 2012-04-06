@@ -1,0 +1,16 @@
+<%= title 'Publicaciones' %>
+
+<div class="actions">
+  <%= link_to 'Añadir publicación', new_publication_path %>
+</div>
+
+<table class="table">
+  <% publications.each do |pub| %>
+    <tr>
+      <td><%= link_to pub.title, pub %></td>
+      <td><%= pub.author %></div>
+      <td><%= pub.publisher %></div>
+    </tr>
+  <% end %>
+</table>
+

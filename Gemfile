@@ -20,6 +20,14 @@ end
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jbuilder'
+gem 'decent_exposure'
+gem 'simple_form'
+gem 'friendly_id'
+gem 'redcarpet'
+
+gem 'prawn'
+#gem 'prawnto'
+gem 'nokogiri'
 
 #gem 'unicorn'
 #gem 'capistrano'

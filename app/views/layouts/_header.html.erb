@@ -1,0 +1,15 @@
+<div class="container">
+  <header id="page_header" role="banner">
+  <%= link_to 'Pubhub', root_path, class: 'appname' %>
+  <nav id="navigation" role="navigation">
+  <ul>
+    <%#= nav_tab :publications, publications_path, current: :publications %>
+  </ul>
+  </nav>
+  <% if current_user %>
+    <nav id="session">
+    <p>Hola <%= current_user.name %></p>
+    </nav>
+  <% end %>
+  </header>
+</div>
