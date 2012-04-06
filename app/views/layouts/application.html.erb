@@ -10,7 +10,14 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="main span8">
+          <%= yield %>
+        </div>
+        <div class="sidebar span4">
+          <%= render 'sidebar' %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
