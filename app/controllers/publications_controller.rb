@@ -18,6 +18,9 @@ class PublicationsController < ApplicationController
           type: 'application/pdf', disposition: 'inline'
       end
     end
+  end
+
+  def read
 
   end
 

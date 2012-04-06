@@ -1,9 +1,5 @@
 <%= title publication.title %>
-<div class="actions">
-  <%= link_to 'Volver', publications_path %>
-  <%= link_to 'Editar', [:edit, publication] %>
-  <%= link_to 'Generar .pdf', publication_path(publication, format: 'pdf') %>
-</div>
+<%= render 'actions' %>
 
 <dl class="properties">
   <dt>Authorxs:</dt><dd><%= publication.author %></dd>

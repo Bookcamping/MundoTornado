@@ -1,0 +1,8 @@
+<div class="actions">
+  <%= link_to 'Volver', publications_path %>
+  <%= link_to 'Info', publication %>
+  <%= link_to 'Leer', read_path(publication) %>
+  <%= link_to 'Editar', [:edit, publication] %>
+  <%= link_to 'Generar .pdf', publication_path(publication, format: 'pdf') %>
+</div>
+
