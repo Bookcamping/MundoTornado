@@ -11,6 +11,9 @@
     <%= render 'layouts/header' %>
     <%= render 'layouts/flashes' %>
     <div class="container">
+      <div class="banner row"><div class="span12">
+          <%= placeholder_image_tag({text: "Mundo tornado (1170x200)", width: 1170, height: 200}, {class: "responsive"}) %>
+      </div></div>
       <div class="row">
         <div class="main span8">
           <%= yield %>
