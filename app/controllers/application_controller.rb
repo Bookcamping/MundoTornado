@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include HasCurrentGroup
@@ -20,5 +21,10 @@ class ApplicationController < ActionController::Base
     else
       session[:user_id] = nil
     end
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "No puedes entrar ahí..."
+    redirect_to root_url
   end
 end

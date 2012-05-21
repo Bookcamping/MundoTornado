@@ -1,5 +1,12 @@
 <%= title 'Semillero' %>
-<div class="actions">&nbsp;</div>
+<div class="actions">
+  <p>El Semillero es un repositorio de textos, ideas, etc. Están ahí
+  a libre disposición de quién lo quiera usar en sus ficciones.
+  Todo lo que hay en el semillero
+  es Dominio Público y totalmente remezclable. Solo hay que citar el
+  autor de la fuente si es que ha dejado un nombre.</p>
+  <%= link_to 'Entra si quieres colaborar', login_path unless can? :create, Seed %>
+</div>
 
 <% if can? :create, Seed %>
   <%= simple_form_for new_seed do |form| %>
@@ -7,10 +14,6 @@
     <%= form.submit 'Plantar', class: 'btn' %>
   <% end %>
 <% else %>
-  <p>
-  <%= link_to 'Entra', login_path %> para colaborar.
-  <br><br>
-  </p>
 <% end %>
 
 <table class="table">

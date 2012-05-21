@@ -16,6 +16,7 @@ class Ability
       can :manage, Seed, user_id: user.id
       cannot :create, User
       can :manage, Page
+      can :update, User, id: user.id
     end
   end
 end

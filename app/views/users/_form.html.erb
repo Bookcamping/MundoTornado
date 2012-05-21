@@ -4,5 +4,5 @@
   <%= form.input :password %>
   <%= form.input :password_confirmation %>
   <%= form.input :admin if current_user && current_user.admin? %>
-  <%= form.submit 'Dar de alta', class: 'btn' %>
+  <%= form.submit user.new_record? ? 'Dar de alta' : 'Guardar', class: 'btn' %>
 <% end %>

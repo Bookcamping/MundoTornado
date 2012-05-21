@@ -33,4 +33,10 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+
+  def update
+    authorize! :update, user
+    flash[:notice] = 'Datos guardados' if user.update_attributes(params[:user])
+    respond_with user, location: root_path
+  end
 end
