@@ -17,6 +17,20 @@ class PublicationsController < ApplicationController
         send_data generator.render, filename: "#{publication.title}.pdf",
           type: 'application/pdf', disposition: 'inline'
       end
+      format.epub do
+        epub = EeePub::Easy.new do
+          title       'sample'
+          creator     'jugyo'
+          publisher   'jugyo.org'
+          date        '2010-05-06'
+          identifier  'http://example.com/book/foo', :scheme => 'URL'
+          uid         'http://example.com/book/foo'
+        end
+
+        epub.save("#{Rails.root}/tmp/sample.epub")
+        send_file "#{Rails.root}/tmp/sample.epub", type: 'application/epub+zip',
+          disposition: 'inline'
+      end
     end
   end
 

@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -25,22 +26,18 @@ gem 'friendly_id'
 gem 'redcarpet'
 
 gem 'prawn'
-#gem 'prawnto'
-gem 'nokogiri'
+#gem 'nokogiri'
+gem 'eeepub'
 
-#gem 'unicorn'
-#gem 'capistrano'
+gem 'unicorn'
+gem 'capistrano'
 
-group :development do
-  gem 'mysql2'
-end
-
-
-group :production do
-  gem 'pg'
-end
 
 group :test do
-  gem 'sqlite3'
+  gem 'minitest'
+  gem 'capybara'
+  gem 'turn'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  #gem 'ruby-debug19', :require => 'ruby-debug'
 end
-
