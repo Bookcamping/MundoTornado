@@ -25,5 +25,6 @@ class SessionsController < ApplicationController
     if !Rails.env.production? || (current_user && current_user.admin?)
       session[:user_id] = params[:id]
     end
+    redirect_to root_path
   end
 end

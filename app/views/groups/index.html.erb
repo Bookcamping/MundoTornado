@@ -8,6 +8,9 @@
     <tr>
       <td><%= group.name %></td>
       <td><%= group.description %></td>
+      <td class="">
+        <%= link_to 'Editar', [:edit, group] if can? :update, group %>
+      </td>
     </tr>
   <% end %>
 </table>

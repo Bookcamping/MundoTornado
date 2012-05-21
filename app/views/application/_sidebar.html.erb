@@ -1,3 +1,10 @@
+<h4>¡Estás en <%= current_group.name %>!</h4>
+<p><%= markdown current_group.description %></p>
+<ul>
+  <% current_group.pages.each do |page| %>
+    <li><%= link_to page.title, page %></li>
+  <% end %>
+</ul>
 <p>
 <strong>Ficciones</strong> es una herramienta de <a href="http://bookcamping.cc">Bookcamping</a>
 para crear y publicar ficciones (o no) de manera colaborativa.

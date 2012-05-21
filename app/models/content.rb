@@ -3,6 +3,9 @@ class Content < ActiveRecord::Base
   attr_accessible :user, :group, :user_id, :group_id
 
   validates_presence_of :title, :user_id, :group_id
+
+  belongs_to :user
+  belongs_to :group
   
   CONTENT_TYPES = ['markdown']
 

@@ -13,11 +13,15 @@
   </p>
 <% end %>
 
-<% seeds.each do |seed| %>
-  <%= div_for seed do %>
-    <%= link_to seed.user.name, seed.user %>
-    hace <%= time_ago_in_words seed.created_at %>
-  <%= link_to 'Borrar', seed, method: :delete, confirm: '¿Seguro?' if can? :delete, seed %>
-  <%= markdown(seed.body) %> 
-<% end %>
-<% end %>
+<table class="table">
+  <% seeds.each do |seed| %>
+    <tr>
+      <td>
+        <%= link_to seed.user.name, seed %>
+      </td>
+      <td>
+        <%= markdown(seed.body) %> 
+      </td>
+    </tr>
+  <% end %>
+</table>

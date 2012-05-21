@@ -13,7 +13,7 @@ describe 'Groups integration' do
     login_user(create(:user, admin: true))
     visit new_group_path
     page.fill_in 'group_name', with: 'Nombre'
-    page.fill_in 'group_subodmain', with: 'subdomain'
+    page.fill_in 'group_subdomain', with: 'subdomain'
     page.fill_in 'group_description', with: 'Group description'
     click_submit
 

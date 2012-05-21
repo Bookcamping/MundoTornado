@@ -33,6 +33,15 @@ class IntegrationTest < MiniTest::Spec
   include Capybara::DSL
 
   register_spec_type(/integration$/, self)
+  
+  before :each do
+    @group = create(:group)
+    subdomain(@group.subdomain)
+  end
+
+  def current_group
+    @group
+  end
 
   def subdomain(subdomain)
     host = subdomain.present? ? "http://#{subdomain}.lvh.me" : "http://lvh.me"

@@ -1,6 +1,9 @@
 es:
   activerecord:
     models:
-      publication: 'publicación'
-      user: 'usuaria'
+      group: 'ficción'
+      page: 'página'
+      seed: 'semilla'
+      user: 'participante'
+      
 

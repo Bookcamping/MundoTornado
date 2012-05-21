@@ -30,4 +30,6 @@ FactoryGirl.define do
     sequence(:body) {|n| "Seed #{n}" }
   end
 
+  factory :page, parent: :content do
+  end
 end

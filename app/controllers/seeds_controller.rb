@@ -10,6 +10,11 @@ class SeedsController < ApplicationController
     respond_with seeds
   end
 
+  def show
+    authorize! :show, seed
+    respond_with seed
+  end
+
   def create
     seed.user = current_user
     authorize! :create, seed

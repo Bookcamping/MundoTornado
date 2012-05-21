@@ -1,6 +1,6 @@
 <%= simple_form_for group do |form| %>
   <%= form.input :name %>
   <%= form.input :subdomain %>
-  <%= form.input :description %>
+  <%= form.input :description, as: :text %>
   <%= form.submit class: 'btn' %>
 <% end %>

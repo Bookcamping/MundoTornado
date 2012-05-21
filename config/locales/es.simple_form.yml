@@ -24,6 +24,10 @@ es:
         description: 'Descripción'
         body: 'Texto'
 
+      user:
+        password: 'Contraseña'
+        password_confirmation: 'Repite la contraseña'
+
     hints:
       seed:
         body: 'Puedes usar markdown'
