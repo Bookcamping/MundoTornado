@@ -24,6 +24,7 @@ gem 'decent_exposure'
 gem 'simple_form'
 gem 'friendly_id'
 gem 'redcarpet'
+gem 'cancan'
 
 gem 'prawn'
 #gem 'nokogiri'

@@ -1,18 +1,20 @@
 class UsersController < ApplicationController
-  before_filter :require_user, except: [:new, :create]
   expose(:users) { User.all }
   expose(:user)
 
   def index
+    can :show, User
   end
 
   def new
+    authorize! :create, User
   end
 
   def create
+    authorize! :create, User
     if user.save
-      session[:user_id] = user.id
-      redirect_to root_url, notice: "Thank you for signing up!"
+      login_user(user)
+      redirect_to root_url, notice: "Bienvenida a ficciones bookcamping."
     else
       render "new"
     end

@@ -1,11 +1,15 @@
 Pubhub::Application.routes.draw do
-  root to: 'publications#index'
-  resources :users, path: 'somos'
-  resources :publications, path: 'publicaciones'
-  match 'leer/:id' => 'publications#read', as: 'read'
+  scope path_names: { new: "nueva", edit: 'editar' } do
+    resources :users, path: 'somos'
+    resources :groups, path: 'ficciones'
+    resources :seeds, path: 'semillero'
 
-  resources :sessions, path: 'sesion', only: [:create]
+    resources :sessions, path: 'sesion', only: [:create]
+  end
+
+  root to: 'seeds#index'
   get 'registrarse', to: 'users#new', as: 'signup'
   get 'entrar', to: 'sessions#new', as: 'login'
   get 'salir', to: 'sessions#destroy', as: 'logout'
+  get 'enter', to: 'sessions#enter', as: :enter
 end

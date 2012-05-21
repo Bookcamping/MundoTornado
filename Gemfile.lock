@@ -36,6 +36,7 @@ GEM
     blankslate (2.1.2.4)
     bootstrap-sass (2.0.2)
     builder (3.0.0)
+    cancan (1.6.7)
     capistrano (2.12.0)
       highline
       net-scp (>= 1.0.0)
@@ -190,6 +191,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
+  cancan
   capistrano
   capybara
   coffee-rails (~> 3.2.1)

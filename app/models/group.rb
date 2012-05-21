@@ -3,4 +3,5 @@ class Group < ActiveRecord::Base
   validates_presence_of :name, :subdomain
 
   belongs_to :user
+  has_many :seeds
 end

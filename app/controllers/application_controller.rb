@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include HasCurrentGroup
 
   private
 
@@ -10,5 +11,14 @@ class ApplicationController < ActionController::Base
 
   def require_user 
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
+  end
+
+  def login_user(user)
+    if user.present?
+      session[:user_id] = user.id
+      user.update_attributes(last_login_at: Time.now, login_count: user.login_count + 1)
+    else
+      session[:user_id] = nil
+    end
   end
 end

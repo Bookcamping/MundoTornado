@@ -11,28 +11,60 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406140513) do
+ActiveRecord::Schema.define(:version => 20120521140726) do
 
-  create_table "publications", :force => true do |t|
+  create_table "contents", :force => true do |t|
+    t.string   "type",         :limit => 50
     t.integer  "user_id"
+    t.integer  "group_id"
     t.string   "title",        :limit => 300
     t.string   "author",       :limit => 100
     t.string   "publisher",    :limit => 100
     t.text     "content"
-    t.string   "content_type", :limit => 100
-    t.text     "settings"
+    t.string   "content_type", :limit => 30
+    t.string   "settings",     :limit => 500
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end
 
-  add_index "publications", ["user_id"], :name => "index_publications_on_user_id"
+  add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
+  add_index "contents", ["type"], :name => "index_contents_on_type"
+  add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
+
+  create_table "groups", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name",         :limit => 200
+    t.string   "description",  :limit => 600
+    t.string   "subdomain",    :limit => 100
+    t.string   "banner_image"
+    t.string   "settings",     :limit => 500
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
+
+  create_table "seeds", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.string   "body",       :limit => 500
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "seeds", ["group_id"], :name => "index_seeds_on_group_id"
+  add_index "seeds", ["user_id"], :name => "index_seeds_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "name"
+    t.string   "email",           :limit => 300
+    t.string   "name",            :limit => 100
+    t.string   "slug",            :limit => 100
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "login_count",                    :default => 0
+    t.datetime "last_login_at"
+    t.boolean  "admin"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
   end
 
 end

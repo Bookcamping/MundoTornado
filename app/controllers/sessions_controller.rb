@@ -19,4 +19,10 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url, notice: "Logged out!"
   end
+
+  def enter
+    if !Rails.env.production? || (current_user && current_user.admin?)
+      session[:user_id] = params[:id]
+    end
+  end
 end

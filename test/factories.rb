@@ -14,6 +14,7 @@ FactoryGirl.define do
   factory :group do
     sequence(:name) {|n| "Group#{n}" }
     subdomain  { name.parameterize }
+    description { "#{name} description" }
     user
   end
 
@@ -23,28 +24,10 @@ FactoryGirl.define do
     group
   end
 
-  factory :post, parent: :content, class: Post do
-  end
-
-  factory :page, parent: :content, class: Page do
-  end
-
-  factory :phase do
-    sequence(:name_es) {|n| "Fase es #{n}"}
-    sequence(:name_ca) {|n| "Fase ca #{n}"}
-    description_es { "#{name_es} descripción" }
-    description_ca { "#{name_ca} descripciò" }
-  end
-
-  factory :proposal do
-    sequence(:title) {|n| "Proposal #{n}"}
-    body { "#{title} body" }
+  factory :seed do
     user
-    phase
+    group
+    sequence(:body) {|n| "Seed #{n}" }
   end
 
-  factory :message do
-    sequence(:body) {|n| "Message body #{n}" }
-    user
-  end
 end
