@@ -9,10 +9,4 @@ module ContentHelper
     raw(rendered)
   end
 
-  def markdown
-    @markdown ||= Redcarpet::Markdown.new(::PubHubHTML, 
-      autolink: true, 
-      space_after_headers: true,
-      superscript: true)
-  end
 end

@@ -21,6 +21,12 @@ es:
         publisher: 'Editora'
         content_type: 'Tipo de contenido'
         content: 'Contenido'
+        description: 'Descripción'
+        body: 'Texto'
+
+    hints:
+      seed:
+        body: 'Puedes usar markdown'
 
     helpers:
       submit:

@@ -3,5 +3,6 @@
   <%= form.input :email %>
   <%= form.input :password %>
   <%= form.input :password_confirmation %>
+  <%= form.input :admin if current_user && current_user.admin? %>
   <%= form.submit 'Dar de alta', class: 'btn' %>
 <% end %>

@@ -1,0 +1,18 @@
+<%= title 'Semillero' %>
+<div class="actions">&nbsp;</div>
+
+<% if can? :create, Seed %>
+  <%= simple_form_for new_seed do |form| %>
+    <%= form.input :body, as: :text, label: false %>
+    <%= form.submit 'Plantar', class: 'btn' %>
+  <% end %>
+<% end %>
+
+<% seeds.each do |seed| %>
+  <%= div_for seed do %>
+    <%= link_to seed.user.name, seed.user %>
+    hace <%= time_ago_in_words seed.created_at %>
+    <%= link_to 'Borrar', seed, method: :delete, confirm: '¿Seguro?' if can? :delete, seed %>
+    <%= markdown(seed.body) %> 
+  <% end %>
+<% end %>

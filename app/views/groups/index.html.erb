@@ -1,0 +1,13 @@
+<%= title 'Grupos' %>
+<div class="actions">
+  <%= link_to 'Nuevo grupo', new_group_path if can? :create, Group %>
+</div>
+
+<table class="table">
+  <% groups.each do |group| %>
+    <tr>
+      <td><%= group.name %></td>
+      <td><%= group.description %></td>
+    </tr>
+  <% end %>
+</table>

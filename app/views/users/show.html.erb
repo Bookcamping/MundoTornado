@@ -1,0 +1,5 @@
+<%= title user.name %>
+<div class="actions">
+  <%= link_to 'Editar', [:edit, user] if can? :update, user %>
+</div>
+

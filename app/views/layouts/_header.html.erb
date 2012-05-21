@@ -1,7 +1,7 @@
 <div class="container">
   <header id="page_header" role="banner">
   <a href="/" class="appname">
-    <h3>Pubhub<small> #bookcamping</small></h3>
+    <h3><%= current_group.name %><small> #bookcamping</small></h3>
   </a>
   <nav id="navigation" role="navigation">
   <ul>
@@ -10,7 +10,7 @@
   </nav>
   <% if current_user %>
     <nav id="session">
-    <p>Hola <%= current_user.name %> <%= link_to 'Salir', logout_path %></p>
+    <p>Hola <%= link_to current_user.name, [:edit, current_user] %> | <%= link_to 'Salir', logout_path %></p>
   </nav>
 <% end %>
 </header>

@@ -1,7 +1,7 @@
 Pubhub::Application.routes.draw do
   scope path_names: { new: "nueva", edit: 'editar' } do
     resources :users, path: 'somos'
-    resources :groups, path: 'ficciones'
+    resources :groups, path: 'grupos'
     resources :seeds, path: 'semillero'
 
     resources :sessions, path: 'sesion', only: [:create]
