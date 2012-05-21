@@ -32,7 +32,7 @@ gem 'eeepub'
 
 gem 'unicorn'
 gem 'capistrano'
-
+gem 'hoptoad_notifier'
 
 group :test do
   gem 'minitest'
