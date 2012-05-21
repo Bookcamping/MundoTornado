@@ -6,13 +6,18 @@
     <%= form.input :body, as: :text, label: false %>
     <%= form.submit 'Plantar', class: 'btn' %>
   <% end %>
+<% else %>
+  <p>
+  <%= link_to 'Entra', login_path %> para colaborar.
+  <br><br>
+  </p>
 <% end %>
 
 <% seeds.each do |seed| %>
   <%= div_for seed do %>
     <%= link_to seed.user.name, seed.user %>
     hace <%= time_ago_in_words seed.created_at %>
-    <%= link_to 'Borrar', seed, method: :delete, confirm: '¿Seguro?' if can? :delete, seed %>
-    <%= markdown(seed.body) %> 
-  <% end %>
+  <%= link_to 'Borrar', seed, method: :delete, confirm: '¿Seguro?' if can? :delete, seed %>
+  <%= markdown(seed.body) %> 
+<% end %>
 <% end %>
