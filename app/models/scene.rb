@@ -11,6 +11,7 @@ class Scene < ActiveRecord::Base
   validates_presence_of :content, :content_type, :user_id, :group_id, :chapter_id
 
   acts_as_list scope: :chapter_id
+  has_paper_trail meta: {group_id: :group_id}
 
   after_create :add_owner_participant
 

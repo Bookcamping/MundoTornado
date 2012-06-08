@@ -26,8 +26,7 @@ class ScenesController < ApplicationController
 
   def update
     authorize! :update, scene
-    scene.attributes = params[:scene]
-    flash[:notice] = 'Ahora mejor' if scene.save
+    flash[:notice] = 'Ahora mejor' if scene.update_attributes(params[:scene])
     respond_with scene, location: chapter_path(chapter)
   end
 

@@ -31,6 +31,7 @@ FactoryGirl.define do
   end
 
   factory :page, parent: :content do
+    type { 'Page' }
   end
 
   factory :chapter do

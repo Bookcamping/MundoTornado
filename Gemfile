@@ -27,6 +27,7 @@ gem 'redcarpet'
 gem 'cancan'
 gem 'cambelt'
 gem 'acts_as_list'
+gem 'paper_trail'
 
 gem 'prawn'
 #gem 'nokogiri'

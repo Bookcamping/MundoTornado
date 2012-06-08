@@ -1,5 +1,6 @@
 class SeedsController < ApplicationController
   respond_to :html
+  before_filter :require_user, except: [:index, :show]
 
   expose(:seeds) { current_group.seeds }
   expose(:seed)

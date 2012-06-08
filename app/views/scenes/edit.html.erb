@@ -1,2 +1,11 @@
 <%= title "Editar escena #{scene.position} de '#{chapter.title}'" %>
 <%= render 'form' %>
+
+<ul class="versions">
+<% scene.versions.each do |version| %>
+  <li>
+  Modificado por <%= version.user.name %>
+  hace <%= time_ago_in_words version.created_at %>
+  </li>
+<% end %>
+</ul>

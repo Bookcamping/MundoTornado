@@ -1,11 +1,14 @@
 <div class="container">
   <div id="page-header" class="row">
     <div class="span6 offset3">
-      <% if current_user %>
-        <div id="session">
+      <div id="session">
+        <% if current_user %>
           <p>Hola <%= link_to current_user.name, [:edit, current_user] %> | <%= link_to 'Salir', logout_path %></p>
-        </div>
-      <% end %>
+        <% else %>
+          <%= link_to 'Entrar', login_path %>
+        <% end %>
+      </div>
+
       <a href="/" class="appname">
         <h3><%= current_group.name %><small> #bookcamping</small></h3>
       </a>
