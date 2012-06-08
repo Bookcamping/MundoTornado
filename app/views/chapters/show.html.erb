@@ -1,4 +1,6 @@
 <%= div_for chapter do %>
+  <%= link_to icon(:pencil), [:edit, chapter],
+   class: 'chapter-action' if can? :update, chapter %>
   <h3>Capítulo <%= chapter.position %>:</h3>
   <%= title chapter.title %>
 

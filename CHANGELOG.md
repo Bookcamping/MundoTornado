@@ -5,6 +5,7 @@
 - Capítulos y escenas
 - Mejorado el layout
 - Versiones de scenas
+- Se pueden editar los capítulos
 
 ## 21/05/2012
 - Mundo tornado

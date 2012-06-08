@@ -20,6 +20,10 @@ div.item {
   }
 }
 
+div.chapter {
+  a.chapter-action { display: block; float: right; }
+}
+
 div.scene:hover {
   padding-top: 0;
   div.info {display: block}

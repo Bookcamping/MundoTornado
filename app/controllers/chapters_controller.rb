@@ -34,4 +34,11 @@ class ChaptersController < ApplicationController
     respond_with chapter
   end
 
+  def update
+    authorize! :update, chapter
+    chapter.attributes = params[:chapter]
+    flash[:notice] = 'Capítulo modificado. Ahora si...' if chapter.save
+    respond_with chapter
+  end
+
 end
