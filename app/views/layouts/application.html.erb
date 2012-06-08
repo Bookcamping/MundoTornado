@@ -8,26 +8,36 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
     <%= render 'layouts/flashes' %>
+    <%= render 'layouts/header' %>
     <div class="container">
-      <%= render 'banner' %>
+      <% render 'banner' %>
       <div class="row">
-        <div class="main span8">
+        <div class="sidebar left span3">
+          <% if sidebar? %>
+            <div class="sidecontent">
+              <%= render 'left_sidebar' %>
+            </div>
+          <% end %>
+          &nbsp;
+        </div>
+        <div class="main span6">
           <%= yield %>
         </div>
-        <div class="sidebar span4">
-          <%= render 'sidebar' %>
-          <div class="footer">
-            <p>
-            <strong>Ficciones</strong> es una herramienta de <a href="http://bookcamping.cc">Bookcamping</a>
-            para crear y publicar ficciones (o no) de manera colaborativa.
-            </p>
-          </div>
-
+        <div class="sidebar right span3">
+          <% if sidebar? %>
+            <div class="sidecontent">
+              <%= render 'right_sidebar' %>
+            </div>
+          <% end %>
+          &nbsp;
         </div>
       </div>
-      <div class="row">
+      <div class="footer">
+        <p>
+        <strong>Ficciones</strong> es una herramienta de <a href="http://bookcamping.cc">Bookcamping</a>
+        para crear y publicar ficciones (o no) de manera colaborativa.
+        </p>
       </div>
     </div>
   </body>

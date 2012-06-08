@@ -15,6 +15,11 @@ class SeedsController < ApplicationController
     respond_with seed
   end
 
+  def new
+    authorize! :create, Seed
+    respond_with seed
+  end
+
   def create
     seed.user = current_user
     authorize! :create, seed

@@ -1,13 +1,12 @@
-$headingsColor: #000000;
+$headingsColor: #333;
 $serifFontFamily: 'Kreon', Georgia, "Times New Roman", Times, serif;
 $baseFontFamily: $serifFontFamily;
-$baseFontSize: 17px;
-$baseLineHeight: 24px;
+$baseFontSize: 15px;
+$baseLineHeight: 20px;
 @import 'bootstrap';
 @import "bootstrap-responsive";
 
 @import 'layout';
-@import 'header';
 @import 'forms';
 @import 'models';
 

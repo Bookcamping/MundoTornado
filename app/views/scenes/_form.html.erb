@@ -1,0 +1,6 @@
+<%= simple_form_for [chapter, scene] do |form| %>
+  <%= form.input :content, label: false, autofocus: true %>
+  <%= form.submit %>
+  <%= link_to 'Cancelar', chapter %>
+<% end %>
+

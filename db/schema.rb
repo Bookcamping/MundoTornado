@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120521140726) do
+ActiveRecord::Schema.define(:version => 20120608161217) do
+
+  create_table "chapters", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.string   "title",        :limit => 300
+    t.string   "summary",      :limit => 500
+    t.integer  "scenes_count"
+    t.integer  "position"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "chapters", ["group_id"], :name => "index_chapters_on_group_id"
+  add_index "chapters", ["user_id"], :name => "index_chapters_on_user_id"
 
   create_table "contents", :force => true do |t|
     t.string   "type",         :limit => 50
@@ -43,6 +57,32 @@ ActiveRecord::Schema.define(:version => 20120521140726) do
   end
 
   add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
+
+  create_table "participants", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "scene_id"
+    t.integer  "chapter_id"
+    t.datetime "created_at"
+  end
+
+  add_index "participants", ["scene_id"], :name => "index_participants_on_scene_id"
+
+  create_table "scenes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "chapter_id"
+    t.text     "content"
+    t.string   "content_type",       :limit => 30
+    t.integer  "participants_count"
+    t.integer  "position"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "scenes", ["chapter_id"], :name => "index_scenes_on_chapter_id"
+  add_index "scenes", ["group_id"], :name => "index_scenes_on_group_id"
+  add_index "scenes", ["user_id"], :name => "index_scenes_on_user_id"
 
   create_table "seeds", :force => true do |t|
     t.integer  "group_id"

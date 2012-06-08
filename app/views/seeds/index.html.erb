@@ -8,14 +8,6 @@
   <%= link_to 'Entra si quieres colaborar', login_path unless can? :create, Seed %>
 </div>
 
-<% if can? :create, Seed %>
-  <%= simple_form_for new_seed do |form| %>
-    <%= form.input :body, as: :text, label: false %>
-    <%= form.submit 'Plantar', class: 'btn' %>
-  <% end %>
-<% else %>
-<% end %>
-
 <table class="table">
   <% seeds.each do |seed| %>
     <tr>

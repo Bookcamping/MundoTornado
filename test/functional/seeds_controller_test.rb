@@ -10,8 +10,7 @@ describe 'Seeds integration' do
 
   it 'can create seeds if logged in' do
     login_user(create(:user))
-    visit seeds_path
-    puts page.text
+    visit new_seed_path
     fill_in 'seed_body', with: 'Semilla'
     click_submit
     seed = Seed.last

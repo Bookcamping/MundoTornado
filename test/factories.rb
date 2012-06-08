@@ -32,4 +32,19 @@ FactoryGirl.define do
 
   factory :page, parent: :content do
   end
+
+  factory :chapter do
+    sequence(:title) {|n| "Chapter #{n}"}
+    summary { "#{title} summary" }
+    user
+    group
+  end
+
+  factory :scene do
+    chapter
+    group { chapter.group }
+    user
+    sequence(:content) {|n| "Scene #{n}" }
+    content_type { 'markdown' }
+  end
 end

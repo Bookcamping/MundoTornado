@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -26,6 +26,7 @@ gem 'friendly_id'
 gem 'redcarpet'
 gem 'cancan'
 gem 'cambelt'
+gem 'acts_as_list'
 
 gem 'prawn'
 #gem 'nokogiri'

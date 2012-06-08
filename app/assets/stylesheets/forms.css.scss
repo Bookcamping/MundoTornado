@@ -1,4 +1,29 @@
+$black: #333;
 
 form {
-  textarea { width: 100%;}
+  input[type=text], input[type=password],
+  input[type=email] {
+    border: 1px solid $black;
+    border-radius: 2px;
+    width: 100%;
+  }
+  input[type=submit] {
+    background-color: $black;
+    color: white;
+    border: 0;
+  }
+  textarea { 
+    width: 100%;
+    border: 0;
+    box-shadow: 0;
+  }
+}
+
+.main form { 
+  margin-top: 20px; 
+  textarea:focus:required:invalid:focus,
+  textarea:focus:required:valid:focus {
+    box-shadow: none;
+    padding: 0;
+  }
 }

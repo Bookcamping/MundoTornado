@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span4">
+  <div class="span3">
     <%= title 'Entrar' %>
     <div class="actions">&nbsp;</div>
 
@@ -12,10 +12,10 @@
         <label>Contraseña</label>
         <%= password_field_tag :password %>
       </div>
-      <%= button_tag 'Entrar', class: 'btn' %>
+      <%= submit_tag 'Entrar' %>
     <% end %>
   </div>
-  <div class="span4">
+  <div class="span3">
     <h1>Darse de alta</h1>
     <div class="actions">&nbsp;</div>
     <%= render 'users/form' %>

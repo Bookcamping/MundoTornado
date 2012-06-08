@@ -17,8 +17,8 @@ describe 'Groups integration' do
     page.fill_in 'group_description', with: 'Group description'
     click_submit
 
-    user = User.last
-    user.name.must_equal 'Nombre'
-    user.subdomain.must_equal 'subdomain'
+    group = Group.last
+    group.name.must_equal 'Nombre'
+    group.subdomain.must_equal 'subdomain'
   end
 end

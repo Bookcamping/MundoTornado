@@ -5,5 +5,7 @@ es:
       page: 'página'
       seed: 'semilla'
       user: 'participante'
+      chapter: 'capítulo'
+      scene: 'escena'
       
 

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 07/06/2012
+- Intentando copiar ideas de svbtle.com (de dcurt.is)
+- Capítulos y escenas
+- Mejorado el layout
+
 ## 21/05/2012
 - Mundo tornado
 - Deploy

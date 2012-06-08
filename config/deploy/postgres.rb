@@ -21,14 +21,14 @@ namespace :db do
 
     file  = "#{application}.sql.bz2"
     remote_file = "#{shared_path}/log/#{file}"
-    run "pg_dump --clean --no-owner --no-privileges -U#{production['username']} -h#{production['host']} #{production['database']} | bzip2 > #{file}" do |ch, stream, out|
+    run "pg_dump --clean --no-owner --no-privileges -U#{production['username']} -hlocalhost #{production['database']} | bzip2 > #{file}" do |ch, stream, out|
       ch.send_data "#{production['password']}\n" if out =~ /^Password:/
       puts out
     end
     puts rsync = "rsync #{user}@masqueunacasa.net:#{file} tmp"
     `#{rsync}`
     development = db['development']
-    puts depackage = "bzcat tmp/#{file} | psql -U#{development['username']} Masqueunacasa"
+    puts depackage = "bzcat tmp/#{file} | psql -U#{development['username']} Pubhub"
     `#{depackage}`
   end
 end

@@ -1,2 +1,26 @@
 
 form textarea#seed_body { height: 6em; }
+
+div.item {
+  margin: 15px 0 10px 0;
+  border-bottom: 1px solid #efefef;
+  div.info {
+    width: 100%; overflow: hidden; 
+    padding: 0; 
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #efefef;
+
+    h4 {display: block; float: left;}
+
+    a {
+      font-size: 50%;
+      display: block; float: right;
+      margin-right: 0px;
+    }
+  }
+}
+
+div.scene:hover {
+  padding-top: 0;
+  div.info {display: block}
+}

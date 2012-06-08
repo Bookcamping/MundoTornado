@@ -6,7 +6,7 @@
 <table class="table">
   <% groups.each do |group| %>
     <tr>
-      <td><%= group.name %></td>
+      <td><%= link_to group.name, root_url(subdomain: group.subdomain) %></td>
       <td><%= group.description %></td>
       <td class="">
         <%= link_to 'Editar', [:edit, group] if can? :update, group %>

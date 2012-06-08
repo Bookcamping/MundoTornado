@@ -11,9 +11,17 @@ module ApplicationHelper
 
   def markdowner
     @markdown ||= Redcarpet::Markdown.new(::PubHubHTML, 
-      autolink: true, 
-      space_after_headers: true,
-      superscript: true)
+                                          autolink: true, 
+                                          space_after_headers: true,
+                                          superscript: true)
   end
 
+  def sidebar?
+    action = request.path_parameters[:action]
+    action == 'index' || action == 'show'
+  end
+
+  def icon(icon, label = '')
+    raw("<i class=\"icon-#{icon}\"></i>#{label}")
+  end
 end

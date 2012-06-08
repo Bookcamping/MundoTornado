@@ -27,12 +27,17 @@ es:
       user:
         password: 'Contraseña'
         password_confirmation: 'Repite la contraseña'
+      
+      chapter:
+        summary: 'Resúmen'
 
     hints:
-      seed:
-        body: 'Puedes usar markdown'
+      chapter:
+        summary: 'Tienes 500 caracteres.'
 
     helpers:
       submit:
         create: "Añadir %{model}"
         update: "Guardar"
+      scene:
+        create: "Añadir escena"

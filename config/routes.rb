@@ -4,11 +4,15 @@ Pubhub::Application.routes.draw do
     resources :groups, path: 'grupos'
     resources :seeds, path: 'semillero'
     resources :pages, path: 'info'
+    resources :chapters, path: 'capitulos' do
+      resources :scenes, path: 'escenas'
+    end
+
 
     resources :sessions, path: 'sesion', only: [:create]
   end
 
-  root to: 'seeds#index'
+  root to: 'chapters#index'
   get 'registrarse', to: 'users#new', as: 'signup'
   get 'entrar', to: 'sessions#new', as: 'login'
   get 'salir', to: 'sessions#destroy', as: 'logout'

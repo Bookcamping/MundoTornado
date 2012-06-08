@@ -1,0 +1,9 @@
+<%= div_for chapter do %>
+  <h3>Capítulo <%= chapter.position %>:</h3>
+  <%= title chapter.title %>
+
+  <%= render chapter.scenes %>
+<% end %>
+<div class="actions">
+  <%= link_to 'Añadir escena', new_chapter_scene_path(chapter) if can? :create, Scene %>
+</div>

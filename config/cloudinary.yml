@@ -1,0 +1,20 @@
+---
+development:
+  cloud_name: masqueunacasa
+  api_key: '653162835336973'
+  api_secret: j5isI-0gjQ3HByRPwNDkA98QEmY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: masqueunacasa
+  api_key: '653162835336973'
+  api_secret: j5isI-0gjQ3HByRPwNDkA98QEmY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: masqueunacasa
+  api_key: '653162835336973'
+  api_secret: j5isI-0gjQ3HByRPwNDkA98QEmY
+  enhance_image_tag: true
+  static_image_support: false
+

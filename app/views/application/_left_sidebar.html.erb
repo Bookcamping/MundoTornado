@@ -1,0 +1,11 @@
+<p><%= markdown current_group.description %></p>
+<% if current_group.chapters.size > 0 %>
+<ul>
+  <% current_group.chapters.each do |chapter| %>
+    <li><%= link_to "Capítulo #{chapter.position}: #{chapter.title}", chapter %></li>
+  <% end %>
+</ul>
+<div class="actions">
+  <%= link_to 'Añadir capítulo', new_chapter_path %>
+</div>
+<% end %>
