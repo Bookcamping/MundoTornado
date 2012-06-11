@@ -8,9 +8,12 @@
 
 <div class="mentions">
   <h3>Dónde aparece...</h3>
-  <% content.mentions.each do |scene| %>
-    <%= link_to "#{scene.chapter.title}, escena #{scene.position}", chapter_path(scene.chapter, anchor: "s#{scene.position}") %>
-
-  <% end %>
+  <ul>
+    <% content.mentions.each do |scene| %>
+      <li>
+      <%= link_to "#{chapter_name(scene.chapter)}, escena #{scene.position}", chapter_path(scene.chapter, anchor: "s#{scene.position}") %>
+      </li>
+    <% end %>
+  </ul>
 </div>
 

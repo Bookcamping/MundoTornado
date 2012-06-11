@@ -2,7 +2,7 @@
 <% if current_group.chapters.size > 0 %>
 <ul>
   <% current_group.chapters.each do |chapter| %>
-    <li><%= link_to "Capítulo #{chapter.position}: #{chapter.title}", chapter %></li>
+    <li><%= link_to chapter_name(chapter), chapter %></li>
   <% end %>
 </ul>
 <div class="actions">

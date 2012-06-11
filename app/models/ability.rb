@@ -24,7 +24,7 @@ class Ability
       can :manage, Character
       can :manage, Pedia
       can :manage, Chapter, user_id: user.id
-      can :manage, Scene, user_id: user.id
+      can :manage, Scene
       can :update, Scene
     end
   end

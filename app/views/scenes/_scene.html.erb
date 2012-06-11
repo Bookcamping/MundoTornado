@@ -1,11 +1,13 @@
 <%= div_for scene, class: 'item' do %>
-  <a name="s2" />
   <div class="info">
+    <a name="s<%= scene.position %>">&nbsp;</a>
     <h4>Escena <%= scene.position %></h4>
     <%= link_to icon(:trash), [chapter, scene], method: :delete,
       confirm: "¿Borrar la escena #{scene.position}?" if can? :destroy, scene %>
     <%= link_to icon(:pencil), [:edit, chapter, scene] if can? :update, scene %>
   </div>
-  <%= markdown scene.content %>
+  <div class="content">
+    <%= markdown scene.content %>
+  </div>
 <% end %>
 
