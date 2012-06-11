@@ -21,10 +21,22 @@ class SeedsController < ApplicationController
     respond_with seed
   end
 
+  def edit
+    authorize! :update, seed
+    respond_with seed
+  end
+
   def create
     seed.user = current_user
     authorize! :create, seed
     flash[:notice] = 'Plantando.' if seed.save
+    respond_with seed, location: seeds_path
+  end
+
+  def update
+    authorize! :update, seed
+    seed.attributes = params[:seed]
+    flash[:notice] = 'Creciendo.' if seed.save
     respond_with seed, location: seeds_path
   end
 

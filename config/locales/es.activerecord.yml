@@ -6,6 +6,8 @@ es:
       seed: 'semilla'
       user: 'participante'
       chapter: 'capítulo'
+      character: 'personaje'
+      pedia: 'entrada a la enciclopedia'
       scene: 'escena'
       
 

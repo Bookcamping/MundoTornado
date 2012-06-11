@@ -4,7 +4,7 @@ class Chapter < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :group
-  has_many :scenes
+  has_many :scenes, order: 'position ASC'
 
   
   validates_presence_of :title, :user_id, :group_id

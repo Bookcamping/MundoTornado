@@ -1,6 +1,6 @@
 <%= title 'Semilla' %>
 <div class="actions">
-  <%= link_to 'Volver', seeds_path %>
+  <%= link_to 'Editar', [:edit, seed] if can? :update, seed %>
   <%= link_to 'Borrar', seed, method: :delete, confirm: '¿Segura?' if can? :delete, seed %>
 </div>
 

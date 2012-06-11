@@ -1,9 +1,18 @@
-<h4>Semillero</h4>
+<h4>Semillero<small> <%= current_group.seeds.size %></small></h4>
 <%= render current_group.seeds %>
 <div class="actions">
   <%= link_to 'Añadir semilla', new_seed_path %>
 </div>
 
-<h4>Personajes</h4>
-<h4>Enciclopedia</h4>
+<h4>Personajes<small> <%= current_group.characters.size %></small></h4>
+<%= render current_group.characters %>
+<div class="actions">
+  <%= link_to 'Añadir personaje', new_character_path %>
+</div>
+
+<h4>Enciclopedia<small> <%= current_group.pedias.size %></small></h4>
+<%= render current_group.pedias %>
+<div class="actions">
+  <%= link_to 'Añadir entrada', new_pedia_path %>
+</div>
 

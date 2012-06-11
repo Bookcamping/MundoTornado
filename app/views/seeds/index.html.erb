@@ -12,10 +12,7 @@
   <% seeds.each do |seed| %>
     <tr>
       <td>
-        <%= link_to seed.user.name, seed %>
-      </td>
-      <td>
-        <%= markdown(seed.body) %> 
+        <%= link_to markdown(truncate(seed.body, length: 80)), seed %> 
       </td>
     </tr>
   <% end %>

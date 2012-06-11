@@ -1,6 +1,6 @@
 <%= div_for chapter do %>
   <%= link_to icon(:pencil), [:edit, chapter],
-   class: 'chapter-action' if can? :update, chapter %>
+    class: 'chapter-action' if can? :update, chapter %>
   <h3>Capítulo <%= chapter.position %>:</h3>
   <%= title chapter.title %>
 
@@ -8,4 +8,14 @@
 <% end %>
 <div class="actions">
   <%= link_to 'Añadir escena', new_chapter_scene_path(chapter) if can? :create, Scene %>
+</div>
+
+<div class="timeline">
+  <% if chapter.higher_item %>
+    <%= link_to chapter.higher_item.title, chapter.higher_item %> | 
+  <% end %>
+  <%= chapter.title %> |
+  <% if chapter.lower_item %>
+    <%= link_to chapter.lower_item.title, chapter.lower_item %>
+  <% end %>
 </div>

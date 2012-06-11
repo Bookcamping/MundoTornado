@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Site
   def name
     'Ficciones'
@@ -15,7 +16,15 @@ class Site
     []
   end
 
+  def characters 
+    []
+  end
+
+  def pedias
+    []
+  end
+
   def description
-    'Ficciones bookcamping'
+    'Este es el grupo site. No deberías estar viéndolo.'
   end
 end

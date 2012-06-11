@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 11/06/2012
+- Menciones de la manera más KISS
+- Personajes y entradas de la enciclopedia
+
 ## 07/06/2012
 - Intentando copiar ideas de svbtle.com (de dcurt.is)
 - Capítulos y escenas

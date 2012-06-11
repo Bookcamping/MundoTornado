@@ -7,7 +7,8 @@ Pubhub::Application.routes.draw do
     resources :chapters, path: 'capitulos' do
       resources :scenes, path: 'escenas'
     end
-
+    resources :characters, path: 'personajes'
+    resources :pedias, path: 'enciclopedia'
 
     resources :sessions, path: 'sesion', only: [:create]
   end

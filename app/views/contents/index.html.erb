@@ -1,0 +1,12 @@
+<%= title "#{model.model_name.human}s".camelcase %>
+<div class="actions">
+  <%= link_to 'Añadir', [:new, model.to_s.downcase] if can? :create, content %>
+</div>
+
+<table class="table">
+  <% contents.each do |content| %>
+    <tr>
+      <td><%= link_to content.title, content %></td>
+    </tr>
+  <% end %>
+</table>

@@ -23,6 +23,21 @@ FactoryGirl.define do
     user
     group
   end
+  factory :page, parent: :content do
+    sequence(:title) {|n| "Page #{n}" }
+    user
+    group
+  end
+  factory :character do
+    sequence(:title) {|n| "Character #{n}" }
+    user
+    group
+  end
+  factory :pedia do
+    sequence(:title) {|n| "Pedia #{n}" }
+    user
+    group
+  end
 
   factory :seed do
     user
@@ -30,9 +45,6 @@ FactoryGirl.define do
     sequence(:body) {|n| "Seed #{n}" }
   end
 
-  factory :page, parent: :content do
-    type { 'Page' }
-  end
 
   factory :chapter do
     sequence(:title) {|n| "Chapter #{n}"}

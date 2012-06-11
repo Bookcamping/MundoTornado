@@ -1,8 +1,0 @@
-<%= title page.title %>
-<div class="actions">
-  <%= link_to 'Editar', [:edit, page], rel: 'edit-page' if can? :update, page %>
-  <%= link_to 'Nueva página', new_page_path if can? :create, Page %>
-</div>
-
-<%= render_content(page) %>
-

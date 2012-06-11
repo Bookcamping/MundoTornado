@@ -1,0 +1,16 @@
+<%= title content.title %>
+<div class="actions">
+  <%= link_to 'Editar', [:edit, content], rel: 'edit-content' if can? :update, content %>
+  <%= link_to "Añadir #{model.model_name.human}", [:new, model.to_s.downcase] if can? :create, content %>
+</div>
+
+<%= render_content(content) %>
+
+<div class="mentions">
+  <h3>Dónde aparece...</h3>
+  <% content.mentions.each do |scene| %>
+    <%= link_to "#{scene.chapter.title}, escena #{scene.position}", chapter_path(scene.chapter, anchor: "s#{scene.position}") %>
+
+  <% end %>
+</div>
+

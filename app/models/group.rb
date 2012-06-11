@@ -6,4 +6,6 @@ class Group < ActiveRecord::Base
   has_many :seeds, order: 'created_at DESC'
   has_many :pages, order: 'created_at ASC'
   has_many :chapters, order: 'position ASC'
+  has_many :characters, order: 'title ASC'
+  has_many :pedias, order: 'title ASC'
 end
