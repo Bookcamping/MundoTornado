@@ -14,6 +14,7 @@ class ContentsController < ApplicationController
 
   def new
     authorize! :create, model
+    content.title = params[:t]
     respond_with content
   end
 
@@ -42,4 +43,6 @@ class ContentsController < ApplicationController
     flash[:notice] = 'Bye, bye...' if content.destroy
     respond_with content
   end
+
+
 end

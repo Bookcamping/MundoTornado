@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 11/06/2012
+- Convertimos en enlaces con javascript
 - Menciones de la manera más KISS
 - Personajes y entradas de la enciclopedia
 
