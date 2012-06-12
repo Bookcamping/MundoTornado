@@ -18,4 +18,5 @@ Pubhub::Application.routes.draw do
   get 'entrar', to: 'sessions#new', as: 'login'
   get 'salir', to: 'sessions#destroy', as: 'logout'
   get 'enter/:id', to: 'sessions#enter', as: :enter
+  get 'no-existe', to: 'contents#not_found', as: :notfound
 end

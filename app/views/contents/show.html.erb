@@ -4,7 +4,7 @@
   <%= link_to "Añadir #{model.model_name.human}", [:new, model.to_s.downcase] if can? :create, content %>
 </div>
 
-<%= render_content(content) %>
+<%= markdown content.content %>
 
 <div class="mentions">
   <h3>Dónde aparece...</h3>

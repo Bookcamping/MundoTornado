@@ -31,6 +31,10 @@ class ContentsController < ApplicationController
     respond_with content
   end
 
+  def not_found
+
+  end
+
 
   def update
     authorize! :update, content

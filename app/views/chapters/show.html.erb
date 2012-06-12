@@ -3,6 +3,7 @@
     class: 'chapter-action' if can? :update, chapter %>
   <h3>Capítulo <%= chapter.position %>:</h3>
   <%= title chapter.title %>
+  <div class="summary"><%= chapter.summary %></div>
 
   <%= render chapter.scenes %>
 <% end %>

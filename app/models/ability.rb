@@ -26,6 +26,10 @@ class Ability
       can :manage, Chapter, user_id: user.id
       can :manage, Scene
       can :update, Scene
+
+      if user.admin?
+        can :manage, Group
+      end
     end
   end
 end

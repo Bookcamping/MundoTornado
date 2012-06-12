@@ -1,9 +1,15 @@
 <div id="flashes" class="container">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+  <% unless current_user %>
+    <div class="alert alert-info">
       <a class="close" data-dismiss="alert">×</a>
-      <%= msg %>
-    </div>
-  <% end %>
+      Para editar tienes que <%= link_to 'entrar', login_path %>
+  </div>
+<% end %>
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+    <a class="close" data-dismiss="alert">×</a>
+    <%= msg %>
+  </div>
+<% end %>
 </div>
 

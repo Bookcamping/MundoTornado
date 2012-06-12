@@ -10,8 +10,8 @@ $(function() {
     function() { $('.sidebar .sidecontent').fadeIn(); }
   );
 
-  var character = /@([^\s^:^.^,^<]+)/g;
-  var pedia = /#([^\s^:^.^,^<]+)/g;
+  var character = /@([^\s^:^.^,^<^"^)^(]+)/g;
+  var pedia = /#([^\s^:^.^,^<^"^(^)]+)/g;
   $('.scene .content').each(function() {
     var html = $(this).html();
     var mod = html.replace(character, '<a href="/personajes/@$1">@$1</a>');
