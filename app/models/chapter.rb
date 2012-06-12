@@ -8,10 +8,10 @@ class Chapter < ActiveRecord::Base
 
   
   validates_presence_of :title, :user_id, :group_id
+  validates_uniqueness_of :title, scope: :group_id
 
+  extend FriendlyId
+  friendly_id :title
   acts_as_list scope: :group_id
 
-  def to_param
-    "#{id}-#{title.parameterize}"
-  end
 end
