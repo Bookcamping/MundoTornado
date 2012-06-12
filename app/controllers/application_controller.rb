@@ -2,6 +2,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include HasCurrentGroup
+  http_basic_authenticate_with name: 'mundo', password: 'tornado'
 
   private
 
