@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   expose(:user)
 
   def index
-    authorize! :show, User
+    authorize! :index, User
   end
 
   def show 

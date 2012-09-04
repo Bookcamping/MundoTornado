@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :name, :email, :password, :password_confirmation
   attr_accessible :login_count, :last_login_at
+  attr_accessible :admin
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 

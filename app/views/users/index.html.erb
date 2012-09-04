@@ -3,7 +3,7 @@
 <table class="table">
   <% users.each do |user| %>
     <tr>
-      <td><%= user.name %></td>
+      <td><%= link_to user.name, user %></td>
     </tr>
   <% end %>
 </table>

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 04/09/2012
+- Bug fix: save user admin's attribute
+
 ## 11/06/2012
 - Aviso de que no puedes editar
 - Si la página no existe, y no puedes editar, te informa

@@ -1,4 +1,4 @@
-Pubhub::Application.routes.draw do
+MundoTornado::Application.routes.draw do
   scope path_names: { new: "nueva", edit: 'editar' } do
     resources :users, path: 'somos'
     resources :groups, path: 'grupos'

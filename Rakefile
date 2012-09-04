@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Pubhub::Application.load_tasks
+MundoTornado::Application.load_tasks

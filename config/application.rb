@@ -12,7 +12,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Pubhub
+module MundoTornado 
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib/renders)
     config.autoload_paths += %W(

@@ -29,6 +29,7 @@ class Ability
 
       if user.admin?
         can :manage, Group
+        can :index, User
       end
     end
   end
